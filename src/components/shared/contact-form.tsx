@@ -52,10 +52,14 @@ export function ContactForm(): React.ReactElement {
 
     setStatus("sending");
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+          ...values,
+          subject: "New message from your portfolio website!",
+        }),
       });
       if (!response.ok) throw new Error(`Status ${response.status}`);
       setStatus("success");
