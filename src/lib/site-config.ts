@@ -1,0 +1,27 @@
+export const siteConfig = {
+  name: "Karim Tamer",
+  role: "Flutter Developer",
+  tagline: "I build products people use. Then teach others to build theirs.",
+  aboutSummary:
+    "Flutter developer and NTI instructor: shipped products to Google Play, delivered client MVPs under deadline, and trained 100+ engineers in Cubit, REST APIs, and MVVM.",
+  email: "karimabokamel74@gmail.com",
+  phone: "+20 114 877 9202",
+  phoneHref: "tel:+201148779202",
+  whatsappUrl: "https://wa.me/201148779202",
+  githubUrl: "https://github.com/KarimTamer74",
+  linkedInUrl: "https://www.linkedin.com/in/karim-tamer74/",
+  resumeUrl: "/files/karim-tamer-resume.pdf",
+  profileImage: "/images/me.jpg",
+  url: "https://karimtamer.dev",
+  keywords: [
+    "Karim Tamer",
+    "Flutter Developer",
+    "Flutter Instructor",
+    "Mobile App Developer",
+    "Dart",
+    "BLoC",
+    "MVVM",
+    "Portfolio",
+    "Egypt",
+  ],
+} as const;
