@@ -71,7 +71,6 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
   const [mainMedia, ...additionalMedia] = project.media;
   const groups = project.mediaGroups ?? [];
 
-  // Evidence-aware rail (Phase 14B): only sections that exist on the page.
   const parts: RailPart[] = [
     { id: "overview", label: "OVERVIEW" },
     ...(project.facts.length ? [{ id: "facts", label: "FACTS" as const }] : []),

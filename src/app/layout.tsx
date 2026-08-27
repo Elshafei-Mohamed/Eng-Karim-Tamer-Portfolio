@@ -102,11 +102,7 @@ const personJsonLd = {
   ],
 };
 
-/**
- * Theme precedence (locked, Phase 9 §4):
- * explicit user choice → OS preference → dark fallback.
- * next-themes implements exactly this with enableSystem + defaultTheme="dark".
- */
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html

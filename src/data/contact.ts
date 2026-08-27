@@ -2,10 +2,7 @@ import { FileText, Mail, MessageCircle } from "lucide-react";
 import { ContactGroup } from "@/types";
 import { siteConfig } from "@/lib/site-config";
 
-/**
- * Two conversion paths with equal dignity (Phase 8 section 35):
- * recruiters take the resume; clients open a direct channel.
- */
+
 export const contactGroups: readonly ContactGroup[] = [
   {
     audience: "RECRUITER",

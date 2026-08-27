@@ -4,17 +4,11 @@ import { useRef, useState, type ReactNode } from "react";
 
 export interface PointerDriftProps {
   children: ReactNode;
-  /** Maximum drift in px on each axis. Kept tiny by design (Phase 14 §13). */
   max?: number;
   className?: string;
 }
 
-/**
- * Extremely restrained pointer response for a selected hero element.
- * Drifts up to `max` px toward the pointer with an eased catch-up,
- * resets on leave. Disabled entirely for reduced motion and touch
- * (coarse pointer) devices. Transform-only; no layout impact.
- */
+
 export function PointerDrift({
   children,
   max = 3,

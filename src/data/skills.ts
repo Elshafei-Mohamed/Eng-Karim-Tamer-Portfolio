@@ -1,6 +1,5 @@
 import type { SkillGroup } from "@/types";
 
-/** Grouped skill inventory — sourced strictly from the resume skills matrix. */
 export const skillGroups: readonly SkillGroup[] = [
   {
     label: "MOBILE",

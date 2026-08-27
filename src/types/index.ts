@@ -2,9 +2,6 @@ import type { ComponentType, SVGProps } from "react";
 
 export type IconComponent = ComponentType<SVGProps<SVGSVGElement>>;
 
-/* ---------------------------------------------------------------------------
- * Mission Control registry vocabulary (Phase 7 §6 / Phase 8 §9)
- * ------------------------------------------------------------------------ */
 
 export type SystemStatus = "LIVE" | "BUILDING" | "DELIVERED" | "CURRICULUM" | "ARCHIVED";
 
@@ -14,11 +11,7 @@ export type ProjectOrigin =
   | "GRADUATION PROJECT"
   | "NTI CURRICULUM";
 
-/**
- * How much verified evidence exists for a project.
- * Drives how much UI the project receives (Phase 14B section 10).
- * Not exposed verbatim to visitors.
- */
+
 export type EvidenceLevel = "FLAGSHIP" | "SELECTED" | "LIMITED";
 
 export type ProjectCategory = "PERSONAL" | "NTI";
@@ -47,11 +40,7 @@ export interface MediaItem {
   priority?: boolean;
 }
 
-/**
- * A narratively grouped set of screenshots for a detail page
- * (Phase: project media refinement). Groups follow the real user
- * journey; never invent categories without evidence.
- */
+
 export interface MediaGroup {
   title: string;
   images: readonly MediaItem[];

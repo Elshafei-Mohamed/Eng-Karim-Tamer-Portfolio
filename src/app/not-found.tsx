@@ -1,9 +1,6 @@
 import Link from "next/link";
 
-/**
- * 404 — "SIGNAL LOST" (Phase 8 §29 / Phase 9 §29).
- * One sentence, one recovery path. No illustration, no jokes.
- */
+
 export default function NotFound(): React.ReactElement {
   return (
     <main id="main-content" className="page-enter flex flex-1 items-center">

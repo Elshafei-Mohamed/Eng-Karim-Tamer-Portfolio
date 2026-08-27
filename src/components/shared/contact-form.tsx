@@ -28,10 +28,7 @@ function validate(values: { name: string; email: string; message: string }): Fie
 const inputClasses =
   "w-full rounded-md border border-border-default bg-surface px-4 py-3 text-[15.5px] text-primary transition-colors duration-150 placeholder:text-muted/70 focus:border-accent focus:outline-none";
 
-/**
- * Contact form — Phase 8 §37 state language.
- * Operator voice only: WORKING… / ✓ SENT / precise recovery paths. No "Oops."
- */
+
 export function ContactForm(): React.ReactElement {
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<FieldErrors>({});

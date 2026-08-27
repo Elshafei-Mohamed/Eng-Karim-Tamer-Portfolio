@@ -6,11 +6,7 @@ import { FactRow } from "@/components/shared/fact-row";
 import { MediaFigure } from "@/components/shared/media-figure";
 import { SectionHeader } from "@/components/shared/section-header";
 
-/**
- * SCREEN 03 - Work: curated showcase (Phase: focus restore).
- * Homepage = the four flagship systems only. Everything else lives in
- * the compact "More Projects" index and the /projects archive.
- */
+
 export function WorkSection({ className }: { className?: string }): React.ReactElement {
   return (
     <section id="work" aria-label="Work" className={`scroll-mt-24 ${className ?? ""}`}>

@@ -10,12 +10,7 @@ import { ThemeToggle } from "@/components/layout/theme-toggle";
 
 const SECTION_IDS = navItems.map((item) => item.href.slice(1));
 
-/**
- * Operator's console chrome.
- * - transparent over page background; hairline border appears after 80px
- * - height 72px → 56px on scroll (Phase 8 §2)
- * - hides on scroll down, returns on scroll up — never while interacting
- */
+
 export function Navbar(): React.ReactElement {
   const [open, setOpen] = useState(false);
   const [closing, setClosing] = useState(false);
@@ -27,9 +22,6 @@ export function Navbar(): React.ReactElement {
   const triggerRef = useRef<HTMLButtonElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
 
-  /** Intentional closing transition (Phase 14 section 7): brief fade-out,
-   * then unmount. Focus returns to the trigger immediately so keyboard
-   * users never wait on the animation. */
   const requestClose = useCallback(() => {
     if (!open) return;
     setClosing(true);

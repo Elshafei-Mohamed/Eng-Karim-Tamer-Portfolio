@@ -7,7 +7,6 @@ export const education = {
   period: "09/2020 - 07/2025",
 } as const;
 
-/* Grade intentionally omitted until verified from the transcript. */
 
 export const courses: readonly Course[] = [
   {

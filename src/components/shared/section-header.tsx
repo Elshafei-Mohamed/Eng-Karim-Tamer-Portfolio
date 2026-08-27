@@ -10,12 +10,7 @@ export interface SectionHeaderProps {
   children?: ReactNode;
 }
 
-/**
- * Section console heading (Phase 7 §3/§5):
- * mono index kicker → Archivo H2 title → optional lede + metadata.
- * The title is a real <h2> so each homepage section holds its place
- * in the document outline.
- */
+
 export function SectionHeader({
   index,
   title,

@@ -1,15 +1,6 @@
 import type { CurriculumApp, Project } from "@/types";
 import { siteConfig } from "@/lib/site-config";
 
-/* ---------------------------------------------------------------------------
- * Operations registry — the single source of truth for every work item.
- * Every fact shown in the UI must originate here (Phase 8 §60–63).
- *
- * Truth rules:
- * - No metric without a verifiable source (resume / store listing / repo).
- * - No Play Store URL exists yet for JobTasker; the channel is stated as a
- *   fact, the hyperlink is omitted until the real listing URL is provided.
- * ------------------------------------------------------------------------ */
 
 export const flagships: readonly Project[] = [
   {
@@ -770,12 +761,7 @@ export const flagships: readonly Project[] = [
   },
 ] as const;
 
-/* ---------------------------------------------------------------------------
- * Selected personal work + NTI curriculum projects.
- * Sparse by design: only verified facts (Phase 14B section 1).
- * Chatbot/Bookly descriptions come from the owner's earlier portfolio copy.
- * PlayZone has no documentation yet and is represented as such.
- * ------------------------------------------------------------------------ */
+
 export const selectedProjects: readonly Project[] = [
   {
     slug: "bidmart",

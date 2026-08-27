@@ -4,11 +4,7 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
-/**
- * Dark/light mode switch — replaces Flutter's `ChangeTheme` Provider +
- * SharedPreferences persistence (now handled by next-themes + localStorage).
- * Both icons are rendered and toggled via CSS to avoid hydration mismatches.
- */
+
 export function ThemeToggle(): React.ReactElement {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);

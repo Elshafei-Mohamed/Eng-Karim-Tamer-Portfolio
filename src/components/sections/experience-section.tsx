@@ -2,11 +2,7 @@ import { jobs } from "@/data/experience";
 import { SectionHeader } from "@/components/shared/section-header";
 import type { Job } from "@/types";
 
-/**
- * SCREEN 04 - Experience: operation log (Phase 8, sections 25-26).
- * Ordered by responsibility. No timeline graphics, no dots, no rails.
- * The Instructor entry is deliberately the largest: it carries the arc.
- */
+
 export function ExperienceSection({ className }: { className?: string }): React.ReactElement {
   const [instructor, freelance, trainee] = jobs;
 

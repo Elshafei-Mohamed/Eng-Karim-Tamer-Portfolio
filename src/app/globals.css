@@ -2,10 +2,7 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* ---------------------------------------------------------------------------
- * Builder's Mission Control — design tokens (Phase 7 §2 / Phase 8 §11)
- * Dark is the primary brand identity; light is fully supported.
- * ------------------------------------------------------------------------ */
+
 :root {
   --color-bg: #fafaf8;
   --color-surface: #ffffff;
@@ -59,7 +56,6 @@
   --font-sans: var(--font-archivo), system-ui, sans-serif;
   --font-mono: var(--font-plex-mono), ui-monospace, monospace;
 
-  /* Type scale (Phase 7 §3) */
   --text-display: clamp(2.75rem, 6vw, 4.5rem);
   --text-display--line-height: 1.08;
   --text-display--letter-spacing: -0.02em;
@@ -78,7 +74,6 @@
 
   --radius-media: 24px;
 
-  /* Motion tokens (Phase 14 section 1): hierarchical durations,
      one shared editorial easing curve. */
   --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
   --dur-micro: 140ms;
@@ -106,8 +101,6 @@
   }
 }
 
-/* Route hand-off (Phase 14 section 2): each page enters with a short
-   rise + fade when navigating. One-shot; replayed per route mount. */
 @keyframes page-in {
   from {
     opacity: 0;
@@ -163,8 +156,6 @@
   }
 }
 
-/* Mobile menu entry (Phase 11 section 2 / Phase 14 section 7): short
-   fade + rise; items stagger 25ms. Closing runs a faster fade-out. */
 @keyframes menu-in {
   from {
     opacity: 0;

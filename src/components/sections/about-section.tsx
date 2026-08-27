@@ -4,11 +4,7 @@ import { skillGroups } from "@/data/skills";
 import { siteConfig } from "@/lib/site-config";
 import { SectionHeader } from "@/components/shared/section-header";
 
-/**
- * SCREEN 06 - About: the operator's file (Phase 8, sections 31-33).
- * Warm Operator humanity lives here: candor over sentiment.
- * Three acts, one concrete fact each. No motivational language.
- */
+
 export function AboutSection({ className }: { className?: string }): React.ReactElement {
   return (
     <section id="about" aria-label="About" className={`scroll-mt-24 ${className ?? ""}`}>

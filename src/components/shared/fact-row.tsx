@@ -1,11 +1,7 @@
 import type { Fact } from "@/types";
 import { cn } from "@/lib/utils";
 
-/**
- * Fact row — instrument-voice key/value pairs (Phase 7 §7).
- * Desktop: KEY VALUE · KEY VALUE …
- * Mobile : stacked KEY over VALUE (Phase 8 §14) — intentional.
- */
+
 export function FactRow({
   facts,
   className,

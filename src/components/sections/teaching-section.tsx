@@ -4,11 +4,7 @@ import { teachingTopics } from "@/data/skills";
 import Link from "next/link";
 import { SectionHeader } from "@/components/shared/section-header";
 
-/**
- * SCREEN 05 - Teaching: a shipped capability (Phase 8, sections 27-30).
- * The NTI applications are one curriculum system: a syllabus list,
- * never five competing cards. No unverified testimonials.
- */
+
 export function TeachingSection({ className }: { className?: string }): React.ReactElement {
   return (
     <section id="teaching" aria-label="Teaching" className={`scroll-mt-24 ${className ?? ""}`}>

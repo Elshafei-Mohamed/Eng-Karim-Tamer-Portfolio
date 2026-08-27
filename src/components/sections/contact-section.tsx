@@ -1,10 +1,7 @@
 import { contactGroups } from "@/data/contact";
 import { ContactForm } from "@/components/shared/contact-form";
 
-/**
- * SCREEN 07 — Contact: open a channel (Phase 8 §34–37).
- * Two audience paths with equal dignity; centered invitation permitted here.
- */
+
 export function ContactSection({ className }: { className?: string }): React.ReactElement {
   return (
     <section id="contact" aria-label="Contact" className={`scroll-mt-24 ${className ?? ""}`}>

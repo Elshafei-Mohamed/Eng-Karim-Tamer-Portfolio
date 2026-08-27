@@ -4,12 +4,7 @@ import { getHeroRegistry } from "@/data/registry";
 import { StatusStamp } from "@/components/shared/status-stamp";
 import { PointerDrift } from "@/components/shared/pointer-drift";
 
-/**
- * SCREEN 01 - The Operator's Console (Phase 8 sections 6-13; Phase 14 section 3).
- * Staggered entrance, 50-70ms intervals:
- * ID + overline -> statement -> supporting copy -> registry rows -> actions.
- * Pure CSS (.boot), one-shot, disabled under reduced motion.
- */
+
 export function HeroSection(): React.ReactElement {
   const registry = getHeroRegistry();
 

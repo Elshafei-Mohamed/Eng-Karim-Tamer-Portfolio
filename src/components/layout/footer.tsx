@@ -1,9 +1,6 @@
 import { siteConfig } from "@/lib/site-config";
 
-/**
- * Quiet footer (Phase 8 §38). The self-referential shipped-product
- * statement appears exactly once on the entire site — here.
- */
+
 export function Footer(): React.ReactElement {
   return (
     <footer className="mt-section border-t border-border-subtle">

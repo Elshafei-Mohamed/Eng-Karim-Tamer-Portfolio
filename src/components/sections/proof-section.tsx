@@ -1,10 +1,6 @@
 import { shippedSystemsCount, siteFacts } from "@/data/facts";
 
-/**
- * SCREEN 02 — Proof bar (Phase 8 §14–15).
- * Three monumental proof moments, server-rendered immediately.
- * No counters, no animation. Numbers come from the shared facts module.
- */
+
 export function ProofSection({ className }: { className?: string }): React.ReactElement {
   const proofs = [
     {

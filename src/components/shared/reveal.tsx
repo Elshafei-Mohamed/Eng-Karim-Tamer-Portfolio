@@ -5,17 +5,11 @@ import { cn } from "@/lib/utils";
 
 export interface RevealProps {
   children: ReactNode;
-  /** Delay in ms before the reveal starts. */
   delay?: number;
   className?: string;
 }
 
-/**
- * Scroll-triggered entrance — Phase 8 §55: 350ms fade + 12px rise, once.
- * Zero-dependency (IntersectionObserver + CSS) to keep the JS budget.
- * Reduced motion / no-JS: content is simply visible (the hidden state is
- * applied only after the observer arms successfully on the client).
- */
+
 export function Reveal({ children, delay = 0, className }: RevealProps): React.ReactElement {
   const ref = useRef<HTMLDivElement>(null);
   const [armed, setArmed] = useState(false);

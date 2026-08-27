@@ -9,14 +9,10 @@ export interface RailPart {
 }
 
 export interface MiniRailProps {
-  /** Only sections that actually exist on the page (Phase 14B section 8). */
   parts: readonly RailPart[];
 }
 
-/**
- * Case-study mini-rail (Phase 8 section 47) - desktop only.
- * Subtle active highlighting; no panel chrome.
- */
+
 export function MiniRail({ parts }: MiniRailProps): React.ReactElement | null {
   const [active, setActive] = useState(parts[0]?.id ?? "");
 

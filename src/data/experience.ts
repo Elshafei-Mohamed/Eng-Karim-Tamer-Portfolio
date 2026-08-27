@@ -1,9 +1,6 @@
 import type { Job } from "@/types";
 
-/**
- * Operation log — ordered by operational maturity (most responsible first).
- * Dates and figures come from the verified resume record.
- */
+
 export const jobs: readonly Job[] = [
   {
     position: "Flutter Instructor",

@@ -6,10 +6,7 @@ import { TeachingSection } from "@/components/sections/teaching-section";
 import { AboutSection } from "@/components/sections/about-section";
 import { ContactSection } from "@/components/sections/contact-section";
 
-/**
- * Homepage — the single narrative (Phase 8 §6–38).
- * Major section rhythm: 160px desktop / 96px tablet / 72px mobile.
- */
+
 const RHYTHM = "mt-[72px] md:mt-[96px] lg:mt-[160px]";
 
 export default function HomePage(): React.ReactElement {

@@ -4,23 +4,14 @@ import { cn } from "@/lib/utils";
 
 export interface MediaFigureProps {
   media: MediaItem;
-  /** Force a specific crop-mask ratio (fill + cover). When omitted,
-   * presentation is orientation-aware: portrait captures render fully
-   * visible at a capped width; landscape renders 3:2 cover (Phase 15B). */
   ratio?: string;
   sizes?: string;
   className?: string;
   imgClassName?: string;
-  /** Compact tier: suppresses the visible caption (alt text remains). */
   compact?: boolean;
 }
 
-/**
- * Cropped product region with mandatory mono caption (Phase 8 section 26).
- * Portrait screenshots render fully visible at a consistent capped width
- * (never stretched, never center-cropped); landscape composites use a
- * balanced 3:2 cover mask. No device frames anywhere.
- */
+
 export function MediaFigure({
   media,
   ratio,
