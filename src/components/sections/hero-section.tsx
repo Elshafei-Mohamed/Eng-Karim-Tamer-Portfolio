@@ -86,7 +86,10 @@ export function HeroSection(): React.ReactElement {
                 className="boot"
                 style={{ animationDelay: `${260 + i * 60}ms` }}
               >
-                <a href="#work" className="group block py-5 transition-opacity hover:opacity-90">
+                <a
+                  href="#work"
+                  className="group block py-5 transition-opacity hover:opacity-90"
+                >
                   <StatusStamp status={project.status} />
                   <p className="mt-2 text-h3 text-primary transition-colors duration-150 group-hover:text-accent">
                     {project.title}
@@ -99,7 +102,10 @@ export function HeroSection(): React.ReactElement {
               </li>
             ))}
             <li className="boot" style={{ animationDelay: "380ms" }}>
-              <a href="#teaching" className="group block py-5 transition-opacity hover:opacity-90">
+              <a
+                href="#teaching"
+                className="group block py-5 transition-opacity hover:opacity-90"
+              >
                 <StatusStamp status="CURRICULUM" />
                 <p className="mt-2 text-h3 text-primary transition-colors duration-150 group-hover:text-accent">
                   100+ engineers trained
@@ -110,21 +116,6 @@ export function HeroSection(): React.ReactElement {
               </a>
             </li>
           </ul>
-        </div>
-      </div>
-
-      {/* Micro-fact: the site vouches for itself with real specs only. */}
-      <div className="border-t border-border-subtle">
-        <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4 lg:px-10">
-          <p className="font-mono text-xs tracking-wider text-muted">
-            THIS SITE: NEXT.JS · STATIC · MEASURED, NOT DECORATED
-          </p>
-          <a
-            href="#proof"
-            className="hidden font-mono text-xs tracking-wider text-muted transition-colors hover:text-secondary sm:block"
-          >
-            EVIDENCE BELOW ↓
-          </a>
         </div>
       </div>
     </section>
