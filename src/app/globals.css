@@ -2,7 +2,6 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-
 :root {
   --color-bg: #fafaf8;
   --color-surface: #ffffff;
@@ -74,14 +73,13 @@
 
   --radius-media: 24px;
 
-     one shared editorial easing curve. */
+  /* one shared editorial easing curve. */
   --ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
   --dur-micro: 140ms;
   --dur-fast: 180ms;
   --dur-medium: 240ms;
   --dur-content: 320ms;
   --dur-enter: 300ms;
-
 }
 
 /* Hero boot sequence: pure CSS, disabled under reduced motion via
@@ -177,13 +175,21 @@
 }
 
 @keyframes backdrop-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes backdrop-out {
-  from { opacity: 1; }
-  to   { opacity: 0; }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .menu-overlay {

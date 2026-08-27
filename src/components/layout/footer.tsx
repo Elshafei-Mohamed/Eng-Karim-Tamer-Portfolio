@@ -1,6 +1,5 @@
 import { siteConfig } from "@/lib/site-config";
 
-
 export function Footer(): React.ReactElement {
   return (
     <footer className="mt-section border-t border-border-subtle">
@@ -52,20 +51,19 @@ export function Footer(): React.ReactElement {
           </ul>
         </div>
 
-        <div className="mt-16 space-y-2 border-t border-border-subtle pt-8 font-mono text-xs leading-relaxed text-muted">
+        <div className="mt-16 flex flex-col justify-center items-center space-y-2 border-t border-border-subtle pt-8 font-mono text-xs leading-relaxed text-muted">
           <p>
             DESIGNED, BUILT, AND MEASURED BY{" "}
             <a
               href="https://1.elshafeimohamed2005.workers.dev/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-secondary transition-colors hover:text-primary"
+              className="text-accent transition-colors hover:text-primary"
             >
               ELSHAFEI MOHAMED
             </a>
             .
           </p>
-          <p>NEXT.JS · APP ROUTER · STATIC RENDER · KEYBOARD ACCESSIBLE</p>
           <p>© {new Date().getFullYear()} KARIM TAMER</p>
         </div>
       </div>
