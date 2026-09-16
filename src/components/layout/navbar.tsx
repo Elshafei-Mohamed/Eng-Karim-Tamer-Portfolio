@@ -137,7 +137,7 @@ export function Navbar(): React.ReactElement {
       >
         <a
           href="#main-content"
-          className="font-mono text-sm font-semibold tracking-widest text-primary"
+          className="wordmark"
           aria-label="Karim Tamer, back to top"
         >
           Karim<span className="text-accent">Tamer</span>
@@ -151,7 +151,7 @@ export function Navbar(): React.ReactElement {
                 href={item.href}
                 aria-current={active === item.href ? "true" : undefined}
                 className={cn(
-                  "group relative inline-flex h-11 items-center gap-1.5 font-mono text-[13px] tracking-wide uppercase transition-colors",
+                  "group relative inline-flex h-11 items-center gap-1.5 font-mono text-sm tracking-wide uppercase transition-colors",
                   active === item.href
                     ? "text-primary"
                     : "text-muted hover:text-secondary",
@@ -175,7 +175,7 @@ export function Navbar(): React.ReactElement {
           <a
             href={siteConfig.resumeUrl}
             download
-            className="pressable hidden h-9 items-center rounded-md border border-border-default px-4 font-mono text-xs tracking-wider text-primary hover:border-primary sm:inline-flex"
+            className="btn btn-outline hidden sm:inline-flex"
           >
             RESUME ↓
           </a>
@@ -191,7 +191,7 @@ export function Navbar(): React.ReactElement {
               setClosing(false);
               setOpen(true);
             }}
-            className="inline-flex h-11 cursor-pointer items-center rounded-md px-4 font-mono text-xs tracking-widest text-primary transition-colors hover:text-accent lg:hidden"
+            className="btn btn-outline lg:hidden"
           >
             MENU
           </button>
@@ -218,13 +218,13 @@ export function Navbar(): React.ReactElement {
             className="menu-overlay fixed inset-0 z-50 flex flex-col bg-bg px-6 pb-8 pt-5 lg:hidden"
           >
             <div className="flex h-14 shrink-0 items-center justify-between">
-              <span className="font-mono text-sm tracking-widest text-primary">
+              <span className="wordmark">
                 Karim <span className="text-accent">Tamer</span>
               </span>
               <button
                 type="button"
                 onClick={closeMenu}
-                className="inline-flex h-11 cursor-pointer items-center rounded-md px-4 font-mono text-xs tracking-widest text-primary transition-colors hover:text-accent"
+                className="btn btn-outline"
               >
                 CLOSE ✕
               </button>
@@ -254,7 +254,7 @@ export function Navbar(): React.ReactElement {
               <a
                 href={siteConfig.resumeUrl}
                 download
-                className="inline-flex w-full h-11 items-center justify-center rounded-md border border-border-default px-5 font-mono bg-accent text-xs tracking-wider text-bg"
+                className="btn btn-solid w-full"
               >
                 RESUME ↓
               </a>

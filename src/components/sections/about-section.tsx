@@ -24,7 +24,7 @@ export function AboutSection({ className }: { className?: string }): React.React
             />
             <dl className="mt-10 space-y-6 border-t border-border-subtle pt-8">
               <div>
-                <dt className="font-mono text-xs tracking-wider text-muted uppercase">EDUCATION</dt>
+                <dt className="label">EDUCATION</dt>
                 <dd className="mt-1 text-sm text-primary">
                   {education.degree}
                   <br />
@@ -32,22 +32,22 @@ export function AboutSection({ className }: { className?: string }): React.React
                 </dd>
               </div>
               <div>
-                <dt className="font-mono text-xs tracking-wider text-muted uppercase">
+                <dt className="label">
                   INSTRUCTOR TRAINING
                 </dt>
-                <dd className="mt-1 font-mono text-xs leading-relaxed tracking-wide text-secondary">
+                <dd className="mt-1 mono-note text-secondary">
                   NTI · CREATIVA MANSOURA
                 </dd>
               </div>
               <div>
-                <dt className="font-mono text-xs tracking-wider text-muted uppercase">
+                <dt className="label">
                   CONTINUING EDUCATION
                 </dt>
                 <dd className="mt-2 space-y-1.5">
                   {courses.map((course) => (
                     <p key={course.title} className="text-sm text-secondary">
                       {course.title}
-                      <span className="block font-mono text-xs text-muted">
+                      <span className="block mono-note">
                         {course.platform} · {course.duration}
                       </span>
                     </p>
@@ -55,8 +55,8 @@ export function AboutSection({ className }: { className?: string }): React.React
                 </dd>
               </div>
               <div>
-                <dt className="font-mono text-xs tracking-wider text-muted uppercase">FOCUS</dt>
-                <dd className="mt-1 font-mono text-xs leading-relaxed tracking-wide text-secondary">
+                <dt className="label">FOCUS</dt>
+                <dd className="mt-1 mono-note text-secondary">
                   FLUTTER · PRODUCT ENGINEERING · WEB
                 </dd>
               </div>
@@ -67,7 +67,7 @@ export function AboutSection({ className }: { className?: string }): React.React
           <div className="lg:col-span-8 lg:pl-8">
             <div className="max-w-[62ch] space-y-10">
               <div>
-                <h3 className="font-mono text-xs tracking-[0.1em] text-accent uppercase">
+                <h3 className="label-accent">
                   ACT I / TRAINEE
                 </h3>
                 <p className="mt-3 text-body-lg text-secondary">
@@ -79,7 +79,7 @@ export function AboutSection({ className }: { className?: string }): React.React
               </div>
 
               <div>
-                <h3 className="font-mono text-xs tracking-[0.1em] text-accent uppercase">
+                <h3 className="label-accent">
                   ACT II / BUILDER
                 </h3>
                 <p className="mt-3 text-body-lg text-secondary">
@@ -92,7 +92,7 @@ export function AboutSection({ className }: { className?: string }): React.React
               </div>
 
               <div>
-                <h3 className="font-mono text-xs tracking-[0.1em] text-accent uppercase">
+                <h3 className="label-accent">
                   ACT III / INSTRUCTOR
                 </h3>
                 <p className="mt-3 text-body-lg text-secondary">
@@ -107,14 +107,14 @@ export function AboutSection({ className }: { className?: string }): React.React
 
             {/* Skill inventory: mono groups, no progress bars */}
             <div className="mt-16 border-t border-border-subtle pt-10">
-              <h3 className="font-mono text-xs tracking-[0.1em] text-muted uppercase">
+              <h3 className="label">
                 SKILL INVENTORY
               </h3>
               <dl className="mt-6 grid grid-cols-1 gap-x-10 gap-y-7 sm:grid-cols-2">
                 {skillGroups.map((group) => (
                   <div key={group.label}>
-                    <dt className="font-mono text-xs tracking-wider text-muted">{group.label}</dt>
-                    <dd className="mt-2 font-mono text-[13px] leading-relaxed text-secondary">
+                    <dt className="mono-note">{group.label}</dt>
+                    <dd className="mono-data mt-2">
                       {group.items.join(" · ")}
                     </dd>
                   </div>

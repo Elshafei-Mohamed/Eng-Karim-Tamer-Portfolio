@@ -44,7 +44,7 @@ function ArchiveRow({
           {title}
         </span>
         <span className="min-w-0 flex-1 truncate text-sm text-secondary">{line}</span>
-        <span className="hidden font-mono text-xs tracking-wide text-muted sm:block">
+        <span className="label hidden sm:block">
           {meta}
         </span>
         <span
@@ -63,7 +63,7 @@ export default function ProjectArchivePage(): React.ReactElement {
     <main id="main-content" className="page-enter flex-1">
       <div className="mx-auto max-w-[1200px] px-6 pb-24 pt-28 md:pt-32 lg:px-10">
         <header>
-          <p className="font-mono text-[13px] font-medium tracking-[0.1em] text-accent uppercase">
+          <p className="label-accent">
             Project archive
           </p>
           <h1 className="mt-3 text-h1 text-primary">Every system in the registry.</h1>
@@ -77,7 +77,7 @@ export default function ProjectArchivePage(): React.ReactElement {
 
         {/* Flagship */}
         <section aria-label="Flagship systems" className="mt-16">
-          <h2 className="font-mono text-xs tracking-[0.1em] text-muted uppercase">
+          <h2 className="label">
             FLAGSHIP SYSTEMS / {flagships.length}
           </h2>
           <ul className="mt-4 divide-y divide-border-subtle border-t border-border-subtle">
@@ -95,7 +95,7 @@ export default function ProjectArchivePage(): React.ReactElement {
 
         {/* Selected personal */}
         <section aria-label="Selected personal work" className="mt-14">
-          <h2 className="font-mono text-xs tracking-[0.1em] text-muted uppercase">
+          <h2 className="label">
             SELECTED PERSONAL WORK / {selectedProjects.length}
           </h2>
           <ul className="mt-4 divide-y divide-border-subtle border-t border-border-subtle">
@@ -113,7 +113,7 @@ export default function ProjectArchivePage(): React.ReactElement {
 
         {/* NTI curriculum */}
         <section aria-label="NTI curriculum projects" className="mt-14 scroll-mt-24" id="curriculum">
-          <h2 className="font-mono text-xs tracking-[0.1em] text-curriculum uppercase">
+          <h2 className="label text-curriculum">
             CURRICULUM / NTI · {ntiProjects.length}
           </h2>
           <ul className="mt-4 divide-y divide-border-subtle border-t border-border-subtle">
@@ -132,7 +132,7 @@ export default function ProjectArchivePage(): React.ReactElement {
         <p className="mt-16">
           <Link
             href="/#work"
-            className="font-mono text-xs tracking-wider text-muted transition-colors hover:text-secondary"
+            className="btn btn-outline"
           >
             ← BACK TO WORK
           </Link>

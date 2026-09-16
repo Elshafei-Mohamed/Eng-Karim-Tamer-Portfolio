@@ -27,17 +27,17 @@ export function WorkSection({ className }: { className?: string }): React.ReactE
         {/* More Projects: compact index; the archive holds the full registry */}
         <div className="mt-24 lg:mt-32">
           <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-2">
-            <h3 className="font-mono text-xs tracking-[0.1em] text-muted uppercase">
+            <h3 className="label">
               MORE PROJECTS
             </h3>
             <Link
               href="/projects"
-              className="group/archive inline-flex min-h-11 items-center font-mono text-xs tracking-wider text-muted transition-colors hover:text-secondary"
+              className="btn btn-outline group/archive"
             >
               VIEW ALL PROJECTS
               <span
                 aria-hidden
-                className="ms-2 transition-transform duration-150 ease-out group-hover/archive:translate-x-0.5"
+                className="transition-transform duration-150 ease-out group-hover/archive:translate-x-0.5"
               >
                 →
               </span>
@@ -103,7 +103,7 @@ function MoreRow({
           {title}
         </span>
         <span className="min-w-0 flex-1 truncate text-sm text-secondary">{line}</span>
-        <span className="hidden font-mono text-xs tracking-wide text-muted sm:block">
+        <span className="label hidden sm:block">
           {meta}
         </span>
         <span aria-hidden className="text-muted transition-colors group-hover/row:text-accent">
@@ -132,7 +132,7 @@ function ProjectPreview({
       <div className={flip ? "lg:order-2 lg:col-span-5" : "lg:col-span-5"}>
         <div className="flex flex-wrap items-center gap-4">
           <StatusStamp status={project.status} />
-          <p className="font-mono text-xs tracking-wider text-muted uppercase">
+          <p className="label">
             {project.origin}
           </p>
         </div>
@@ -146,38 +146,38 @@ function ProjectPreview({
 
         <p className="mt-3 max-w-[46ch] text-secondary">{project.mission}</p>
 
-        <p className="mt-4 font-mono text-xs leading-relaxed tracking-wide text-muted">
+        <p className="mt-4 mono-note">
           {project.stack.join(" · ")}
         </p>
 
         <FactRow facts={project.facts.slice(0, 3)} className="mt-5" />
 
-        <Link
-          href={`/work/${project.slug}`}
-          className="group/link mt-6 inline-flex min-h-11 items-center font-mono text-[13px] tracking-wider text-primary"
-        >
-          <span className="border-b border-transparent pb-0.5 transition-colors duration-150 group-hover/link:border-accent group-hover/link:text-accent">
+        <div className="mt-6 flex flex-wrap items-center gap-3">
+          <Link
+            href={`/work/${project.slug}`}
+            className="btn btn-solid group/link"
+          >
             READ CASE STUDY
-          </span>
-          <span
-            aria-hidden
-            className="ms-2 transition-transform duration-150 ease-out group-hover/link:translate-x-0.5"
-          >
-            →
-          </span>
-        </Link>
+            <span
+              aria-hidden
+              className="transition-transform duration-150 ease-out group-hover/link:translate-x-0.5"
+            >
+              →
+            </span>
+          </Link>
 
-        {project.links.map((link) => (
-          <a
-            key={link.label}
-            href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ms-6 inline-flex min-h-11 items-center font-mono text-[13px] tracking-wider text-muted transition-colors hover:text-accent"
-          >
-            {link.label}
-          </a>
-        ))}
+          {project.links.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-outline"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
       </div>
 
       {/* Uniform three-screenshot preview row */}

@@ -8,7 +8,7 @@
   --color-surface-raised: #ffffff;
   --color-text-primary: #16181c;
   --color-text-secondary: #454e5a;
-  --color-text-muted: #6b7280;
+  --color-text-muted: #737d89;
   --color-border-subtle: rgba(20, 24, 30, 0.08);
   --color-border-default: rgba(20, 24, 30, 0.16);
   --color-accent: #188a54;
@@ -25,7 +25,7 @@
   --color-surface-raised: #191d24;
   --color-text-primary: #eef0f3;
   --color-text-secondary: #a7afba;
-  --color-text-muted: #727c8c;
+  --color-text-muted: #8a94a3;
   --color-border-subtle: rgba(255, 255, 255, 0.06);
   --color-border-default: rgba(255, 255, 255, 0.11);
   --color-accent: #41c98a;
@@ -53,7 +53,9 @@
   --color-danger: var(--color-danger);
 
   --font-sans: var(--font-archivo), system-ui, sans-serif;
-  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+  --font-mono:
+    var(--font-jetbrains-mono), ui-monospace, "SF Mono", Menlo, Consolas,
+    monospace;
 
   --text-display: clamp(2.75rem, 6vw, 4.5rem);
   --text-display--line-height: 1.08;
@@ -70,6 +72,35 @@
   --text-h3: 1.3125rem;
   --text-h3--line-height: 1.45;
   --text-h3--font-weight: 500;
+
+  /* 1b monument figures: Archivo numerals used as proof metrics.
+     Keep line-height at 1 and a tight track so the faces sit like
+     data readouts, not prose. */
+  --text-metric-2xl: clamp(4rem, 9vw, 7rem);
+  --text-metric-2xl--line-height: 1;
+  --text-metric-2xl--letter-spacing: -0.02em;
+  --text-metric-2xl--font-weight: 600;
+
+  --text-metric-xl: clamp(3.5rem, 7vw, 5.5rem);
+  --text-metric-xl--line-height: 1;
+  --text-metric-xl--letter-spacing: -0.02em;
+  --text-metric-xl--font-weight: 600;
+
+  --text-metric-md: clamp(1.75rem, 3vw, 2.5rem);
+  --text-metric-md--line-height: 1;
+  --text-metric-md--letter-spacing: -0.015em;
+  --text-metric-md--font-weight: 600;
+
+  --text-body-lg: clamp(1.0625rem, 1.25vw, 1.1875rem);
+  --text-body-lg--line-height: 1.7;
+  --text-body-lg--letter-spacing: -0.0025em;
+  --text-body-lg--font-weight: 400;
+
+  /* Small mono labels need one size up + a solid (medium) weight so the
+     letterforms don't read as thin/broken at tiny pixels. */
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.1875rem;
+  --text-xs--font-weight: 500;
 
   --radius-media: 24px;
 
@@ -141,6 +172,160 @@
 
 .pressable:active {
   transform: translateY(1px);
+}
+
+/* One button system for every action in the site: solid (primary),
+   outline (secondary), and the shared press feedback. */
+@layer components {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+    border-radius: 0.5rem;
+    padding-inline: 1.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    cursor: pointer;
+    text-decoration: none;
+    user-select: none;
+    transition:
+      background-color var(--dur-micro) ease,
+      border-color var(--dur-micro) ease,
+      color var(--dur-micro) ease,
+      transform var(--dur-micro) cubic-bezier(0.22, 1, 0.36, 1),
+      opacity var(--dur-fast) ease;
+  }
+
+  .btn:active {
+    transform: translateY(1px);
+  }
+
+  .btn-solid {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+  }
+
+  .btn-solid:hover {
+    opacity: 0.85;
+  }
+
+  .btn-outline {
+    border: 1px solid var(--color-border-default);
+    color: var(--color-text-primary);
+  }
+
+  .btn-outline:hover {
+    border-color: var(--color-text-primary);
+  }
+}
+
+/* Text links that still need to read as links when they carry an action. */
+@layer components {
+  .link {
+    text-decoration-line: underline;
+    text-decoration-color: var(--color-border-default);
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+    transition:
+      color var(--dur-micro) ease,
+      text-decoration-color var(--dur-micro) ease;
+  }
+
+  .link:hover {
+    text-decoration-color: var(--color-accent);
+  }
+}
+
+/* Typography system — one semantic class per voice. Full rationale in
+   TYPOGRAPHY.md. These replace ad-hoc mono combos; tracking is kept
+   modest (0.025em) so JetBrains Mono letterforms raster cleanly at
+   100% zoom instead of shimmering at subpixel positions. */
+@layer components {
+  /* 3a signpost — section index / act / channel captions (accent). */
+  .label-accent {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.1875rem;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  /* 3b supportive caption (muted). */
+  .label {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    line-height: 1.1875rem;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+  }
+
+  /* 3b emphasized caption (primary). */
+  .label-primary {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    line-height: 1.1875rem;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    color: var(--color-text-primary);
+  }
+
+  /* 3c status — color is supplied by the status utilities
+     (text-live / text-building / text-delivered / text-curriculum). */
+  .status {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+  }
+
+  /* 3d brand wordmark — the owner's name. */
+  .wordmark {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+    color: var(--color-text-primary);
+  }
+
+  /* 3b/4 auxiliary mono note (sources, captions, stack lines). */
+  .mono-note {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    line-height: 1.625;
+    letter-spacing: 0.025em;
+    color: var(--color-text-muted);
+  }
+
+  /* 4 mono data record (value rows, skill inventory items). */
+  .mono-data {
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    line-height: 1.625;
+    letter-spacing: 0.025em;
+    color: var(--color-text-secondary);
+  }
+
+  /* h3 titles used lower in the tree keep the h3 size but sit at normal
+     weight — job titles inside the operation log. */
+  .headline-h3-normal {
+    font-size: var(--text-h3);
+    line-height: var(--text-h3--line-height);
+    font-weight: 400;
+  }
 }
 
 @keyframes boot-in {
@@ -220,8 +405,8 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text-secondary);
   font-family: var(--font-sans), system-ui, sans-serif;
-  font-size: 15.5px;
-  line-height: 1.65;
+  font-size: 16px;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   transition:
     background-color 250ms ease,

@@ -41,7 +41,7 @@ export function MediaFigure({
           />
         </div>
         {compact ? null : (
-          <figcaption className="mt-3 font-mono text-xs tracking-wider text-muted">
+          <figcaption className="mt-3 mono-note">
             {media.caption}
           </figcaption>
         )}
@@ -72,7 +72,7 @@ export function MediaFigure({
         />
       </div>
       {compact ? null : (
-        <figcaption className="mt-3 font-mono text-xs tracking-wider text-muted">
+        <figcaption className="mt-3 mono-note">
           {media.caption}
         </figcaption>
       )}

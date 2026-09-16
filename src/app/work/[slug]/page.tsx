@@ -44,20 +44,11 @@ function BackToWork({ className = "" }: { className?: string }): React.ReactElem
   return (
     <Link
       href="/#work"
-      className={cnBack(className)}
+      className={`btn btn-outline ${className}`.trim()}
     >
       ← BACK TO WORK
     </Link>
   );
-}
-
-function cnBack(extra: string): string {
-  return [
-    "inline-flex min-h-11 items-center font-mono text-xs tracking-wider text-muted transition-colors hover:text-secondary",
-    extra,
-  ]
-    .filter(Boolean)
-    .join(" ");
 }
 
 export default async function CaseStudyPage({ params }: CaseStudyProps) {
@@ -104,7 +95,7 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
               <BackToWork />
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <StatusStamp status={project.status} />
-                <p className="font-mono text-xs tracking-wider text-muted uppercase">
+                <p className="label">
                   {project.origin}
                 </p>
               </div>
@@ -142,7 +133,7 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
             {/* Facts */}
             {project.facts.length > 0 ? (
               <section id="facts" aria-label="Facts" className={SECTION_CLASSES}>
-                <h2 className="font-mono text-xs font-medium tracking-[0.1em] text-accent uppercase">
+                <h2 className="label-accent">
                   Facts
                 </h2>
                 <FactRow facts={project.facts} className="mt-5 max-w-[52rem]" />
@@ -152,10 +143,10 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
             {/* Technology */}
             {project.stack.length > 0 ? (
               <section id="technology" aria-label="Technology" className={SECTION_CLASSES}>
-                <h2 className="font-mono text-xs font-medium tracking-[0.1em] text-accent uppercase">
+                <h2 className="label-accent">
                   Technology
                 </h2>
-                <ul className="mt-5 flex flex-wrap gap-x-3 gap-y-2 font-mono text-[13px] text-secondary">
+                <ul className="mono-data mt-5 flex flex-wrap gap-x-3 gap-y-2">
                   {project.stack.map((tech) => (
                     <li key={tech} className="flex items-center gap-3">
                       <span>{tech}</span>
@@ -173,13 +164,13 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
             project.decisions?.length ||
             project.currentState ? (
               <section id="details" aria-label="Project details" className={SECTION_CLASSES}>
-                <h2 className="font-mono text-xs font-medium tracking-[0.1em] text-accent uppercase">
+                <h2 className="label-accent">
                   Project details
                 </h2>
 
                 {project.constraints?.length ? (
                   <div className="mt-6">
-                    <h3 className="font-mono text-xs tracking-wider text-muted uppercase">
+                    <h3 className="label">
                       Constraints
                     </h3>
                     <FactRow facts={project.constraints} className="mt-3" />
@@ -193,7 +184,7 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
                         <h3 className="text-h3 text-primary">{decision.title}</h3>
                         <p className="mt-2 max-w-[62ch]">{decision.body}</p>
                         <p className="mt-3 max-w-[62ch]">
-                          <span className="font-mono text-xs tracking-wider text-muted uppercase">
+                          <span className="label">
                             Because:{" "}
                           </span>
                           <span>{decision.because}</span>
@@ -205,7 +196,7 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
 
                 {project.currentState ? (
                   <div className="mt-10">
-                    <h3 className="font-mono text-xs tracking-wider text-muted uppercase">
+                    <h3 className="label">
                       Current state
                     </h3>
                     <p className="mt-3 flex flex-wrap items-center gap-4">
@@ -215,7 +206,7 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
                       </span>
                     </p>
                     <FactRow facts={project.currentState.details} className="mt-4" />
-                    <p className="mt-4 font-mono text-xs tracking-wider text-muted">
+                    <p className="mt-4 mono-note">
                       CONTENT LAST REVIEWED {project.currentState.lastReviewed}
                     </p>
                   </div>
@@ -232,7 +223,7 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
                     aria-label={group.title}
                     className={SECTION_CLASSES}
                   >
-                    <h2 className="font-mono text-xs font-medium tracking-[0.1em] text-accent uppercase">
+                    <h2 className="label-accent">
                       {String(gi + 1).padStart(2, "0")} · {group.title}
                     </h2>
                 <div className="mt-6 grid grid-cols-2 gap-6 lg:grid-cols-4">
@@ -248,7 +239,7 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
                 ))
             : additionalMedia.length > 0 ? (
               <section id="media" aria-label="Additional media" className={SECTION_CLASSES}>
-                <h2 className="font-mono text-xs font-medium tracking-[0.1em] text-accent uppercase">
+                <h2 className="label-accent">
                   Media
                 </h2>
                 <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -266,7 +257,7 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
             {/* External source */}
             {project.links.length > 0 ? (
               <section id="source" aria-label="External source" className={SECTION_CLASSES}>
-                <h2 className="font-mono text-xs font-medium tracking-[0.1em] text-accent uppercase">
+                <h2 className="label-accent">
                   Source
                 </h2>
                 <ul className="mt-5 flex flex-wrap gap-x-8 gap-y-2">
@@ -276,7 +267,7 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex min-h-11 items-center font-mono text-[13px] tracking-wider text-primary underline decoration-border-default underline-offset-8 transition-colors hover:text-accent hover:decoration-accent"
+                        className="btn btn-outline"
                       >
                         {link.label}
                       </a>
@@ -299,7 +290,7 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
                   aria-label={`Previous project: ${prev.title}`}
                   className="group/p prev block transition-opacity hover:opacity-90"
                 >
-                  <p className="font-mono text-xs tracking-[0.1em] text-muted uppercase">
+                  <p className="label">
                     ← Previous
                   </p>
                   <p className="mt-2 inline-flex items-center gap-2 text-h3 text-primary transition-colors group-hover/p:text-accent">
@@ -311,7 +302,7 @@ export default async function CaseStudyPage({ params }: CaseStudyProps) {
                   aria-label={`Next project: ${next.title}`}
                   className="group/n block text-right transition-opacity hover:opacity-90 sm:text-right"
                 >
-                  <p className="font-mono text-xs tracking-[0.1em] text-muted uppercase">
+                  <p className="label">
                     Next →
                   </p>
                   <p className="mt-2 inline-flex items-center gap-2 text-h3 text-primary transition-colors group-hover/n:text-accent">

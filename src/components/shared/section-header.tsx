@@ -21,7 +21,7 @@ export function SectionHeader({
   return (
     <header className={cn("max-w-[68ch]", className)}>
       {index ? (
-        <p className="font-mono text-[13px] font-medium tracking-[0.1em] text-accent">
+        <p className="label-accent">
           {index}
         </p>
       ) : null}
@@ -34,10 +34,10 @@ export function SectionHeader({
         {title}
       </h2>
       {lede ? (
-        <p className="mt-4 max-w-[58ch] text-body-lg text-secondary">{lede}</p>
+        <p className="mt-4 text-pretty max-w-[58ch] text-body-lg text-secondary">{lede}</p>
       ) : null}
       {meta ? (
-        <p className="mt-4 font-mono text-xs tracking-wider text-muted">
+        <p className="label mt-4 text-pretty">
           {meta}
         </p>
       ) : null}

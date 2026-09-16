@@ -44,7 +44,7 @@ export function MiniRail({ parts }: MiniRailProps): React.ReactElement | null {
               href={`#${part.id}`}
               aria-current={active === part.id ? "true" : undefined}
               className={cn(
-                "group inline-flex min-h-8 items-center gap-2 font-mono text-xs tracking-wider transition-colors",
+                "group inline-flex min-h-8 items-center gap-2 mono-note transition-colors",
                 active === part.id ? "text-primary" : "text-muted hover:text-secondary",
               )}
             >

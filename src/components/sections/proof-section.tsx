@@ -29,10 +29,10 @@ export function ProofSection({ className }: { className?: string }): React.React
               <dt className="sr-only">{proof.label}</dt>
               <dd>
                 <a href={proof.href} className="group block transition-opacity hover:opacity-85">
-                  <span className="block text-[clamp(3.5rem,7vw,5.5rem)] font-semibold leading-none tracking-tight text-primary">
+                  <span className="block text-metric-xl text-primary">
                     {proof.value}
                   </span>
-                  <span className="mt-3 block font-mono text-xs tracking-[0.08em] text-muted group-hover:text-secondary">
+                  <span className="label mt-3 block text-balance group-hover:text-secondary">
                     {proof.label}
                   </span>
                 </a>

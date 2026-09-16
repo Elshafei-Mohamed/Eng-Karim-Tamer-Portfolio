@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, IBM_Plex_Mono } from "next/font/google";
+import { Archivo } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/layout/theme-provider";
 import { Navbar } from "@/components/layout/navbar";
@@ -12,11 +13,18 @@ const archivo = Archivo({
   display: "swap",
 });
 
-const plexMono = IBM_Plex_Mono({
-  variable: "--font-plex-mono",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+/* Self-hosted (full family, not the Google Fonts subset): the GF subsets
+   for both IBM Plex Mono and JetBrains Mono stop before U+2500, so the
+   status marks (● ◐ ✔ ◆) and arrows (→ ↗) the UI relies on were being
+   resolved from a fallback face with different metrics — the wonky,
+   "better at zoom" glyphs. The full JetBrains Mono variable face carries
+   them at a uniform 600/1000 em. */
+const jetbrainsMono = localFont({
+  src: "../../public/fonts/JetBrainsMono[wght].woff2",
+  weight: "100 800",
+  variable: "--font-jetbrains-mono",
   display: "swap",
+  fallback: ["ui-monospace", "SF Mono", "Menlo", "Consolas", "monospace"],
 });
 
 export const metadata: Metadata = {
@@ -109,7 +117,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       data-scroll-behavior="smooth"
       suppressHydrationWarning
-      className={`${archivo.variable} ${plexMono.variable} h-full antialiased`}
+      className={`${archivo.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-bg text-secondary">
         <a

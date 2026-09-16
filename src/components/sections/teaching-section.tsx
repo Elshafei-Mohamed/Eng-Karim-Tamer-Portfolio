@@ -18,10 +18,10 @@ export function TeachingSection({ className }: { className?: string }): React.Re
         <div className="mt-16 grid grid-cols-1 gap-14 lg:grid-cols-12">
           {/* Monument + copy */}
           <div className="lg:col-span-5">
-            <p className="text-[clamp(4rem,9vw,7rem)] font-semibold leading-none tracking-tight text-primary">
+            <p className="text-metric-2xl text-primary">
               {siteFacts.engineersTrained}
             </p>
-            <p className="mt-2 font-mono text-xs tracking-[0.08em] text-muted">
+            <p className="mt-2 label">
               ENGINEERS TRAINED ACROSS {siteFacts.trainingRounds} ROUNDS
             </p>
             <p className="mt-6 max-w-[48ch] text-body-lg text-secondary">
@@ -33,10 +33,10 @@ export function TeachingSection({ className }: { className?: string }): React.Re
 
           <div className="lg:col-span-7 lg:pl-8">
             {/* Topics */}
-            <h3 className="font-mono text-xs tracking-[0.1em] text-muted uppercase">
+            <h3 className="label">
               WHAT I TEACH
             </h3>
-            <ul className="mt-4 flex flex-wrap gap-x-3 gap-y-2 font-mono text-[13px] text-secondary">
+            <ul className="mono-data mt-4 flex flex-wrap gap-x-3 gap-y-2">
               {teachingTopics.map((topic) => (
                 <li key={topic} className="flex items-center gap-3">
                   <span>{topic}</span>
@@ -53,7 +53,7 @@ export function TeachingSection({ className }: { className?: string }): React.Re
                 <span aria-hidden className="text-curriculum">
                   ◆
                 </span>
-                <h3 className="font-mono text-xs font-medium tracking-[0.1em] text-primary uppercase">
+                <h3 className="label-primary">
                   CURRICULUM / NTI · {ntiProjects.length} PROJECTS
                 </h3>
               </div>
@@ -66,12 +66,12 @@ export function TeachingSection({ className }: { className?: string }): React.Re
                       className="group/row -mx-3 flex cursor-pointer items-baseline justify-between rounded-md px-3 py-3.5 transition-colors duration-150 hover:bg-surface"
                     >
                       <span className="text-sm text-secondary transition-colors duration-150 group-hover/row:text-accent">
-                        <span className="me-3 font-mono text-xs text-muted">
+                        <span className="me-3 mono-note">
                           {String(i + 1).padStart(2, "0")}
                         </span>
                         {project.title}
                       </span>
-                      <span className="font-mono text-xs tracking-wide text-muted">NTI TRACK</span>
+                      <span className="mono-note">NTI TRACK</span>
                     </Link>
                   </li>
                 ))}
@@ -80,13 +80,13 @@ export function TeachingSection({ className }: { className?: string }): React.Re
 
             {/* Verified factual outcome */}
             <div className="mt-10 border-t border-border-subtle pt-8">
-              <h3 className="font-mono text-xs tracking-[0.1em] text-muted uppercase">OUTCOME</h3>
+              <h3 className="label">OUTCOME</h3>
               <p className="mt-3 max-w-[58ch] text-body-lg text-secondary">
                 {siteFacts.engineersTrained} engineers have completed NTI&apos;s intensive
                 hands-on Flutter program across {siteFacts.trainingRounds} rounds, each
                 finishing with real applications built and reviewed.
               </p>
-              <p className="mt-3 font-mono text-xs tracking-wider text-muted">
+              <p className="mt-3 mono-note">
                 SOURCE: NTI INSTRUCTOR RECORD · CREATIVA MANSOURA
               </p>
             </div>

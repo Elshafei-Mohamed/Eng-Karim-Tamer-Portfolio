@@ -25,9 +25,12 @@ export function HeroSection(): React.ReactElement {
                 className="rounded-lg object-cover"
               />
             </PointerDrift>
-            <p className="font-mono text-[13px] tracking-[0.1em] text-muted uppercase">
-              {siteConfig.name} · Flutter Developer
-            </p>
+            <div>
+              <p className="font-mono text-xl font-semibold leading-tight tracking-wide text-primary">
+                {siteConfig.name}
+              </p>
+              <p className="mt-1 label">Flutter Developer</p>
+            </div>
           </div>
 
           <h1
@@ -53,13 +56,13 @@ export function HeroSection(): React.ReactElement {
           >
             <a
               href="#work"
-              className="pressable inline-flex min-h-11 items-center rounded-md bg-primary px-5 font-mono text-xs font-medium tracking-wider text-bg hover:opacity-85"
+              className="btn btn-solid"
             >
               READ WORK →
             </a>
             <a
               href="#contact"
-              className="pressable inline-flex min-h-11 items-center rounded-md border border-border-default px-5 font-mono text-xs tracking-wider text-primary hover:border-primary"
+              className="btn btn-outline"
             >
               OPEN CHANNEL →
             </a>
@@ -69,7 +72,7 @@ export function HeroSection(): React.ReactElement {
         {/* System registry */}
         <div className="lg:col-span-5 lg:pl-8">
           <p
-            className="boot font-mono text-xs tracking-[0.1em] text-muted uppercase"
+            className="boot label"
             style={{ animationDelay: "200ms" }}
           >
             SYSTEM REGISTRY
@@ -89,7 +92,7 @@ export function HeroSection(): React.ReactElement {
                   <p className="mt-2 text-h3 text-primary transition-colors duration-150 group-hover:text-accent">
                     {project.title}
                   </p>
-                  <p className="mt-1 font-mono text-xs leading-relaxed tracking-wide text-muted transition-colors duration-150 group-hover:text-secondary">
+                  <p className="mt-1 mono-note transition-colors duration-150 group-hover:text-secondary">
                     {project.stack.slice(0, 3).join(" · ")}
                     {project.status === "LIVE" ? " · GOOGLE PLAY" : ""}
                   </p>
@@ -105,7 +108,7 @@ export function HeroSection(): React.ReactElement {
                 <p className="mt-2 text-h3 text-primary transition-colors duration-150 group-hover:text-accent">
                   100+ engineers trained
                 </p>
-                <p className="mt-1 font-mono text-xs leading-relaxed tracking-wide text-muted transition-colors duration-150 group-hover:text-secondary">
+                <p className="mt-1 mono-note transition-colors duration-150 group-hover:text-secondary">
                   NTI · 5 ROUNDS · INSTRUCTOR
                 </p>
               </a>

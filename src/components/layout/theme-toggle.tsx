@@ -23,7 +23,7 @@ export function ThemeToggle(): React.ReactElement {
         mounted ? `Switch to ${isDark ? "light" : "dark"} mode` : "Toggle theme"
       }
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg transition-colors hover:bg-surface-muted"
+      className="btn btn-outline size-11 rounded-lg p-0"
     >
       <Moon
         className="hidden h-5 w-5 text-accent [.dark_&]:block"

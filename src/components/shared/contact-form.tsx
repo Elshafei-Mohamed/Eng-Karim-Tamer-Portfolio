@@ -26,7 +26,7 @@ function validate(values: { name: string; email: string; message: string }): Fie
 }
 
 const inputClasses =
-  "w-full rounded-md border border-border-default bg-surface px-4 py-3 text-[15.5px] text-primary transition-colors duration-150 placeholder:text-muted/70 focus:border-accent focus:outline-none";
+  "w-full rounded-md border border-border-default bg-surface px-4 py-3 text-base text-primary transition-colors duration-150 placeholder:text-muted/70 focus:border-accent focus:outline-none";
 
 
 export function ContactForm(): React.ReactElement {
@@ -72,7 +72,7 @@ export function ContactForm(): React.ReactElement {
         <div>
           <label
             htmlFor="contact-name"
-            className="mb-2 block font-mono text-xs tracking-wider text-muted uppercase"
+            className="mb-2 block label"
           >
             NAME
           </label>
@@ -98,7 +98,7 @@ export function ContactForm(): React.ReactElement {
         <div>
           <label
             htmlFor="contact-email"
-            className="mb-2 block font-mono text-xs tracking-wider text-muted uppercase"
+            className="mb-2 block label"
           >
             EMAIL
           </label>
@@ -124,7 +124,7 @@ export function ContactForm(): React.ReactElement {
         <div>
           <label
             htmlFor="contact-message"
-            className="mb-2 block font-mono text-xs tracking-wider text-muted uppercase"
+            className="mb-2 block label"
           >
             MESSAGE
           </label>
@@ -150,7 +150,7 @@ export function ContactForm(): React.ReactElement {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="pressable mt-7 inline-flex min-h-11 w-full cursor-pointer items-center justify-center rounded-md bg-primary px-6 font-mono text-xs font-medium tracking-wider text-bg hover:opacity-85 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+        className="btn btn-solid mt-7 w-full cursor-pointer disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
       >
         {status === "sending" ? "WORKING…" : "SEND MESSAGE →"}
       </button>

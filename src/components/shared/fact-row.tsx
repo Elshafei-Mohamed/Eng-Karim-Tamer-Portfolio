@@ -12,7 +12,7 @@ export function FactRow({
   return (
     <ul
       className={cn(
-        "flex flex-wrap gap-x-6 gap-y-3 font-mono text-[13px] leading-relaxed tracking-wide",
+        "mono-data flex flex-wrap gap-x-6 gap-y-3",
         className,
       )}
     >

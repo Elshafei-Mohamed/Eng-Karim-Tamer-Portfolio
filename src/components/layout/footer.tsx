@@ -6,8 +6,8 @@ export function Footer(): React.ReactElement {
       <div className="mx-auto max-w-[1200px] px-6 py-16 lg:px-10">
         <div className="flex flex-col gap-12 md:flex-row md:justify-between">
           <div>
-            <p className="font-h2 text-primary">{siteConfig.name}</p>
-            <p className="mt-1 font-mono text-xs tracking-wider text-muted uppercase">
+            <p className="wordmark">{siteConfig.name}</p>
+            <p className="mt-1 label">
               Flutter Developer · Product Engineer
             </p>
           </div>
@@ -23,7 +23,7 @@ export function Footer(): React.ReactElement {
               <a
                 key={href}
                 href={href}
-                className="font-mono text-xs tracking-wider text-muted transition-colors hover:text-secondary"
+                className="link mono-note w-fit hover:text-secondary"
               >
                 {label}
               </a>
@@ -42,7 +42,7 @@ export function Footer(): React.ReactElement {
                   {...(href.startsWith("http")
                     ? { target: "_blank", rel: "noopener noreferrer" }
                     : {})}
-                  className="font-mono text-xs tracking-wider text-muted transition-colors hover:text-secondary"
+                  className="link mono-note w-fit hover:text-secondary"
                 >
                   {label}
                 </a>
@@ -51,7 +51,7 @@ export function Footer(): React.ReactElement {
           </ul>
         </div>
 
-        <div className="mt-16 flex flex-col justify-center items-center space-y-2 border-t border-border-subtle pt-8 font-mono text-xs leading-relaxed text-muted">
+        <div className="mt-16 flex flex-col justify-center items-center space-y-2 border-t border-border-subtle pt-8 mono-note">
           <p>
             DESIGNED, BUILT, AND MEASURED BY{" "}
             <a
